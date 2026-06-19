@@ -1,9 +1,11 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
+import DashboardPage from "./pages/DashboardPage";
 
 function App() {
   return (
@@ -14,6 +16,9 @@ function App() {
         <Route
           path="/forgot-password"
           element={<ForgotPasswordPage />}
+        />
+        <Route path="/dashboard" 
+        element={<DashboardPage />} 
         />
       </Routes>
     </BrowserRouter>

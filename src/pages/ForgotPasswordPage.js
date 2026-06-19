@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function ForgotPasswordPage() {
 
   const handleReset = () => {
-    alert("Password Reset Link Sent Successfully!");
+    alert("Password reset link has been sent to your email.");
   };
 
   return (
@@ -62,6 +62,9 @@ function ForgotPasswordPage() {
           }}
         >
           Send Reset Link
+        </button>
+        <button onClick={handleReset}>
+          Reset Password
         </button>
 
         <div style={{ marginTop: "15px" }}>
