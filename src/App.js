@@ -20,6 +20,34 @@ function App() {
         <Route path="/dashboard" 
         element={<DashboardPage />} 
         />
+        <div
+  style={{
+    display: "flex",
+    gap: "15px",
+    flexWrap: "wrap",
+  }}
+>
+  <button onClick={() => navigate("/transfer")}>
+    💸 Transfer Money
+  </button>
+
+  <button onClick={() => navigate("/statement")}>
+    📄 Mini Statement
+  </button>
+
+  <button onClick={() => navigate("/beneficiary")}>
+    👤 Add Beneficiary
+  </button>
+
+  <button onClick={() => navigate("/bills")}>
+    💳 Pay Bills
+  </button>
+
+  <button onClick={() => navigate("/profile")}>
+    ⚙ Profile
+  </button>
+</div>
+
       </Routes>
     </BrowserRouter>
   );

@@ -5,6 +5,7 @@ function LoginPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const [loginType, setLoginType] = useState("user");
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -69,6 +70,29 @@ function LoginPage() {
 
             <form onSubmit={handleLogin}>
               <div style={{ marginBottom: "15px" }}>
+
+              <div style={{ marginBottom: "20px" }}>
+  <label>
+    <input
+      type="radio"
+      value="user"
+      checked={loginType === "user"}
+      onChange={() => setLoginType("user")}
+    />
+    User Login
+  </label>
+
+  <label style={{ marginLeft: "20px" }}>
+    <input
+      type="radio"
+      value="admin"
+      checked={loginType === "admin"}
+      onChange={() => setLoginType("admin")}
+    />
+    Admin Login
+  </label>
+</div>
+
                 <label>Username</label>
                 <br />
                 <input
@@ -170,14 +194,7 @@ function LoginPage() {
               alignItems: "center",
             }}
           >
-            <img
-              src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800"
-              alt="Banking"
-              style={{
-                width: "100%",
-                borderRadius: "10px",
-              }}
-            />
+          
           </div>
         </div>
 
