@@ -28,189 +28,173 @@ function LoginPage() {
   };
 
   return (
-    <div
-      style={{
-        backgroundColor: "#eaf2ff",
-        minHeight: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+
       <div
         style={{
-          width: "850px",
-          background: "#fff",
-          borderRadius: "10px",
-          overflow: "hidden",
-          boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+          minHeight: "100vh",
+          background: "linear-gradient(135deg, #0f4c81, #1e88e5)",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
-        {/* Header */}
         <div
           style={{
-            backgroundColor: "#0d47a1",
-            color: "white",
-            padding: "15px",
-            textAlign: "center",
+            width: "450px",
+            backgroundColor: "#fff",
+            padding: "35px",
+            borderRadius: "15px",
+            boxShadow: "0 8px 20px rgba(0,0,0,0.2)",
           }}
         >
-          <h2>🏦 SmartPay Internet Banking</h2>
+          <div style={{ textAlign: "center", marginBottom: "25px" }}>
+            <h2 style={{ color: "#0f4c81", marginBottom: "5px" }}>
+              🏦 SmartPay Banking
+            </h2>
+    
+        <p style={{ color: "#666" }}>
+          Secure Internet Banking Portal
+        </p>
+      </div>
+    
+      <form onSubmit={handleLogin}>
+        <div style={{ marginBottom: "20px" }}>
+          <label>
+            <input
+              type="radio"
+              value="user"
+              checked={loginType === "user"}
+              onChange={() => setLoginType("user")}
+            />
+            User Login
+          </label>
+    
+          <label style={{ marginLeft: "20px" }}>
+            <input
+              type="radio"
+              value="admin"
+              checked={loginType === "admin"}
+              onChange={() => setLoginType("admin")}
+            />
+            Admin Login
+          </label>
         </div>
-
-        <div
-          style={{
-            display: "flex",
-            padding: "30px",
-          }}
-        >
-          {/* Left Side */}
-          <div style={{ flex: 1 }}>
-            <h3 style={{ color: "#0d47a1" }}>Login</h3>
-
-            <form onSubmit={handleLogin}>
-              <div style={{ marginBottom: "15px" }}>
-
-              <div style={{ marginBottom: "20px" }}>
-  <label>
-    <input
-      type="radio"
-      value="user"
-      checked={loginType === "user"}
-      onChange={() => setLoginType("user")}
-    />
-    User Login
-  </label>
-
-  <label style={{ marginLeft: "20px" }}>
-    <input
-      type="radio"
-      value="admin"
-      checked={loginType === "admin"}
-      onChange={() => setLoginType("admin")}
-    />
-    Admin Login
-  </label>
-</div>
-
-                <label>Username</label>
-                <br />
-                <input
-                  type="text"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
-                  placeholder="Enter Username"
-                  style={{
-                    width: "90%",
-                    padding: "10px",
-                    border: "1px solid #ccc",
-                    borderRadius: "5px",
-                  }}
-                />
-              </div>
-
-              <div style={{ marginBottom: "15px" }}>
-                <label>Password</label>
-                <br />
-                <input
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Enter Password"
-                  style={{
-                    width: "90%",
-                    padding: "10px",
-                    border: "1px solid #ccc",
-                    borderRadius: "5px",
-                  }}
-                />
-              </div>
-
-              <button
-                type="submit"
-                style={{
-                  backgroundColor: "#0d47a1",
-                  color: "white",
-                  border: "none",
-                  padding: "10px 20px",
-                  borderRadius: "5px",
-                  cursor: "pointer",
-                  marginRight: "10px",
-                }}
-              >
-                Login
-              </button>
-
-              <button
-                type="button"
-                onClick={handleReset}
-                style={{
-                  backgroundColor: "#d32f2f",
-                  color: "white",
-                  border: "none",
-                  padding: "10px 20px",
-                  borderRadius: "5px",
-                  cursor: "pointer",
-                }}
-              >
-                Reset
-              </button>
-            </form>
-
-            {/* Sign Up and Forgot Password Same Line */}
-            <div style={{ marginTop: "20px" }}>
-              <Link
-                to="/signup"
-                style={{
-                  color: "#0d47a1",
-                  textDecoration: "none",
-                  fontWeight: "bold",
-                }}
-              >
-                Sign Up
-              </Link>
-
-              <span style={{ margin: "0 10px" }}>|</span>
-
-              <Link
-                to="/forgot-password"
-                style={{
-                  color: "#d32f2f",
-                  textDecoration: "none",
-                  fontWeight: "bold",
-                }}
-              >
-                Forgot Password?
-              </Link>
-            </div>
-          </div>
-
-          {/* Right Side */}
-          <div
+    
+        <div style={{ marginBottom: "15px" }}>
+          <label>Username</label>
+    
+          <input
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            placeholder="Enter Username"
             style={{
-              flex: 1,
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
+              width: "100%",
+              padding: "12px",
+              marginTop: "5px",
+              border: "1px solid #ccc",
+              borderRadius: "6px",
             }}
-          >
-          
-          </div>
+          />
         </div>
-
-        {/* Footer */}
-        <div
+    
+        <div style={{ marginBottom: "20px" }}>
+          <label>Password</label>
+    
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Enter Password"
+            style={{
+              width: "100%",
+              padding: "12px",
+              marginTop: "5px",
+              border: "1px solid #ccc",
+              borderRadius: "6px",
+            }}
+          />
+        </div>
+    
+        <button
+          type="submit"
           style={{
-            backgroundColor: "#f5f5f5",
-            textAlign: "center",
-            padding: "10px",
+            width: "100%",
+            backgroundColor: "#0f4c81",
+            color: "white",
+            border: "none",
+            padding: "12px",
+            borderRadius: "6px",
+            cursor: "pointer",
+            marginBottom: "10px",
           }}
         >
-          © 2026 SmartPay Banking Services
-        </div>
+          Login
+        </button>
+    
+        <button
+          type="button"
+          onClick={handleReset}
+          style={{
+            width: "100%",
+            backgroundColor: "#6c757d",
+            color: "white",
+            border: "none",
+            padding: "12px",
+            borderRadius: "6px",
+            cursor: "pointer",
+          }}
+        >
+          Reset
+        </button>
+      </form>
+    
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          marginTop: "20px",
+        }}
+      >
+        <Link
+          to="/signup"
+          style={{
+            color: "#0f4c81",
+            textDecoration: "none",
+            fontWeight: "bold",
+          }}
+        >
+          Sign Up
+        </Link>
+    
+        <Link
+          to="/forgot-password"
+          style={{
+            color: "#0f4c81",
+            textDecoration: "none",
+            fontWeight: "bold",
+          }}
+        >
+          Forgot Password?
+        </Link>
+      </div>
+    
+      <div
+        style={{
+          marginTop: "25px",
+          textAlign: "center",
+          color: "#777",
+          fontSize: "12px",
+        }}
+      >
+        © 2026 SmartPay Banking Services
       </div>
     </div>
-  );
+    
+      </div>
+    );
+    
+        
 }
 
 export default LoginPage;

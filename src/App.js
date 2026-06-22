@@ -1,56 +1,34 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 import DashboardPage from "./pages/DashboardPage";
 
+import TransferMoneyPage from "./pages/TransferMoneyPage";
+import StatementPage from "./pages/StatementPage";
+import BeneficiaryPage from "./pages/BeneficiaryPage";
+import BillPaymentPage from "./pages/BillPaymentPage";
+import ProfilePage from "./pages/ProfilePage";
+
 function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<LoginPage />} />
-        <Route path="/signup" element={<SignUpPage />} />
-        <Route
-          path="/forgot-password"
-          element={<ForgotPasswordPage />}
-        />
-        <Route path="/dashboard" 
-        element={<DashboardPage />} 
-        />
-        <div
-  style={{
-    display: "flex",
-    gap: "15px",
-    flexWrap: "wrap",
-  }}
->
-  <button onClick={() => navigate("/transfer")}>
-    💸 Transfer Money
-  </button>
+return ( <BrowserRouter> <Routes>
+<Route path="/" element={<LoginPage />} />
+<Route path="/signup" element={<SignUpPage />} />
+<Route path="/forgot-password" element={<ForgotPasswordPage />} />
+<Route path="/dashboard" element={<DashboardPage />} />
 
-  <button onClick={() => navigate("/statement")}>
-    📄 Mini Statement
-  </button>
+```
+    <Route path="/transfer" element={<TransferMoneyPage />} />
+    <Route path="/statement" element={<StatementPage />} />
+    <Route path="/beneficiary" element={<BeneficiaryPage />} />
+    <Route path="/bills" element={<BillPaymentPage />} />
+    <Route path="/profile" element={<ProfilePage />} />
+  </Routes>
+</BrowserRouter>
 
-  <button onClick={() => navigate("/beneficiary")}>
-    👤 Add Beneficiary
-  </button>
-
-  <button onClick={() => navigate("/bills")}>
-    💳 Pay Bills
-  </button>
-
-  <button onClick={() => navigate("/profile")}>
-    ⚙ Profile
-  </button>
-</div>
-
-      </Routes>
-    </BrowserRouter>
-  );
+);
 }
 
 export default App;
