@@ -32,21 +32,22 @@ function LoginPage() {
       <div
         style={{
           minHeight: "100vh",
-          background: "linear-gradient(135deg, #0f4c81, #1e88e5)",
+          backgroundColor: "#ffffff",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
         }}
       >
         <div
-          style={{
-            width: "450px",
-            backgroundColor: "#fff",
-            padding: "35px",
-            borderRadius: "15px",
-            boxShadow: "0 8px 20px rgba(0,0,0,0.2)",
-          }}
-        >
+  style={{
+    width: "450px",
+    backgroundColor: "#fff",
+    padding: "35px",
+    borderRadius: "15px",
+    border: "2px solid #0f4c81",
+    boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+  }}
+>
           <div style={{ textAlign: "center", marginBottom: "25px" }}>
             <h2 style={{ color: "#0f4c81", marginBottom: "5px" }}>
               🏦 SmartPay Banking
